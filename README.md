@@ -4,7 +4,7 @@ Hello! I'm Devrim Ersanli, and thank you for giving me the opportunity to partic
 - I tried to stick to the requirements and tried not to over-design or over-load the application
 
 ### How install and run
-I prepared a Github [repo](https://github.com/mui-org/material-ui), please clone that.
+I prepared a Github [repo](https://github.com/dersanli/spacex-missions), please clone that.
 And Install it and run:
 ```sh
 npm install
