@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import * as React from 'react';
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Container from "@mui/material/Container";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import MissionInfo from "./components/MissionInfo";
+import {Main} from "./components/Main";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export const App: React.FunctionComponent = () => {
+
+
+  return(
+    <BrowserRouter>
+      <Container maxWidth="lg">
+        <Box sx={{my: 4}}>
+          <Typography sx={{mb: 4}} variant="h4" component="h1" gutterBottom>
+            Agora Front-End Test - SpaceX App
+          </Typography>
+          <Routes>
+            <Route path="/" element={<Main/>}/>
+            <Route path="/missions/:missionId" element={<MissionInfo/>}/>
+          </Routes>
+        </Box>
+      </Container>
+    </BrowserRouter>
+  )
 }
-
-export default App;

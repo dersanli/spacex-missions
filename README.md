@@ -1,46 +1,43 @@
-# Getting Started with Create React App
+## Agora Front-End Test - SpaceX App
+Hello! I'm Devrim Ersanli, and thank you for giving me the opportunity to participate in this cool challenge.
+- I tried to build an application that lists information about _SpaceX rocket launches_ using their free open SpaceX api
+- I tried to stick to the requirements and tried not to over-design or over-load the application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### How install and run
+I prepared a Github [repo](https://github.com/mui-org/material-ui), please clone that.
+And Install it and run:
+```sh
+npm install
+npm test
+npm start
+```
 
-## Available Scripts
+### Tech stack used
+- **TypeScript** and **React** is used
+- **create-react-app** is used for faster boilerplate
+- Unit tests are written using **Jest** and **React Testing Library**
+- The application uses **Material-UI** for UI components
+- **Redux Toolkit** is used to manage the state _(from the Redux authors: Redux Toolkit is our official recommended approach for writing Redux logic)_
+- As the data table, **ag-grid** is used
+- **React router dom** is used for navigating, for demonstration purposes, although the application has two routes only
 
-In the project directory, you can run:
+### About the application
+- In order to list the most recent 50 launches, the SpaceX api is being queried with the correct query params (`limit=50&sort=launch_date_utc&order=desc`) to optimize the data retrieved from the backend
+- The backend payload is converted (serialised) to an application consumable format (`/src/features/missionSlice.ts:~62`)(Typed properly in `TypeScript` and used throughout the application) in order not to bloat the redux state
+- Application starts with a `GET MISSIONS` button. I did not want to query the backend on startup. I wanted to utilise the `idle, loading, success, or error` states while making asynchronous calls
+- A spinner is displayed while waiting
+- The grid is displayed with the following
+    - Latest 50 flights with these columns (Flight Number, Mission Name, Mission Date)
+    - The grid can be sorted by **Mission Name** and **Mission Date**
+    - A **search text box** for making searches by the Mission Name
+    - On each row, an extra **view rocket details** 'Link' element is added to navigate to Mission Information page
+    - But when you click on a row, the **selected** row is captured and displayed at the bottom of the grid. That means, it is possible to display the mission details within the same page, as well
+- When the **view rocket details** link is clicked on a row
+    - **Rocket Details and Extra Information** route is displayed with `missionId` as the URL parameter
+    - The extra information is displayed using `Material-UI` UI elements
+    - Added an image for the mission, where available :)
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### What's next?
+- Thank you for giving me the opportunity to participate in this cool challenge
+- You can always reach me at `dersanli@gmail.com` for further queries
+- Hope to hear from you, soon. Bye! 👋
