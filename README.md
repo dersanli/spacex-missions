@@ -1,11 +1,7 @@
-## Agora Front-End Test - SpaceX App
-Hello! I'm Devrim Ersanli, and thank you for giving me the opportunity to participate in this cool challenge.
-- I tried to build an application that lists information about _SpaceX rocket launches_ using their free open SpaceX api
-- I tried to stick to the requirements and tried not to over-design or over-load the application
+##SpaceX App
 
 ### How install and run
-I prepared a Github [repo](https://github.com/dersanli/spacex-missions), please clone that.
-And Install it and run:
+To install and run:
 ```sh
 npm install
 npm test
@@ -35,9 +31,4 @@ npm start
 - When the **view rocket details** link is clicked on a row
     - **Rocket Details and Extra Information** route is displayed with `missionId` as the URL parameter
     - The extra information is displayed using `Material-UI` UI elements
-    - Added an image for the mission, where available :)
-
-#### What's next?
-- Thank you for giving me the opportunity to participate in this cool challenge
-- You can always reach me at `dersanli@gmail.com` for further queries
-- Hope to hear from you, soon. Bye! 👋
+    - Added an image for the mission, where available.
